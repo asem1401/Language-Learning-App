@@ -2,6 +2,7 @@ package model;
 
 import java.util.List;
 import java.util.ArrayList;
+import visitor.StatisticsVisitor;
 
 public class Vocabulary {
     private List<Word> words = new ArrayList<>();
@@ -12,6 +13,10 @@ public class Vocabulary {
     }
     public void addWord(Word word){
         words.add(word);
+    }
+    public void accept(StatisticsVisitor visitor2){
+        visitor2.visit(this);
+
     }
 
 

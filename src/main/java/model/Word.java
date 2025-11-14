@@ -1,10 +1,13 @@
 package model;
 
+import java.lang.annotation.Native;
+
 public class Word {
     private String nativeWord;
     private String translation;
     private String category;
     private int difficulty;
+    private String Native;
 
     public Word(String nativeWord, String translation, String category, int difficulty){
         this.nativeWord = nativeWord;
@@ -12,6 +15,9 @@ public class Word {
         this.category = category;
         this. difficulty = difficulty;
 
+    }
+    public String getNative(){
+        return Native;
     }
     public String getNativeWord(){
         return nativeWord;

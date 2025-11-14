@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import visitor.StatisticsVisitor;
 
 
 public class User {
@@ -35,21 +36,25 @@ public class User {
     }
 
 
+
     public List<Word> getLearnedWords(){
         return learnedWords;
     }
 
-    public void addCorrectAnnwers(){
+    public void addCorrectAnswer(){
         correctAnswers++; totalAnswers++;
     }
-    public void addWrongAnsers(){
+    public void addWrongAnswer(){
         totalAnswers++;
     }
     public void addLearnedWord(Word w){
         learnedWords.add(w);
-
+    }
+    public void accept(StatisticsVisitor visitor){
+        visitor.visit(this);
 
     }
+
 
 
 }

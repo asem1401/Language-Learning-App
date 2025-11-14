@@ -47,7 +47,7 @@ public class Decorators {
 
         @Override
         public void execute() {
-            System.out.println("[Decorator] ⏳ Timer enabled");
+            System.out.println("[Decorator]  Timer enabled");
             exercise.execute();
         }
     }
@@ -61,7 +61,7 @@ public class Decorators {
 
         @Override
         public void execute() {
-            System.out.println("[Decorator] 💡 Hint: Think about similar words!");
+            System.out.println("[Decorator] !! Hint: Think about similar words!");
             exercise.execute();
         }
     }
@@ -75,7 +75,7 @@ public class Decorators {
 
         @Override
         public void execute() {
-            System.out.println("[Decorator] ⭐ Bonus XP activated!");
+            System.out.println("[Decorator] ! Bonus XP activated!");
             exercise.execute();
         }
     }

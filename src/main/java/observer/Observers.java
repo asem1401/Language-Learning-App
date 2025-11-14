@@ -8,7 +8,7 @@ public class Observers {
         @Override
         public void update(int xp) {
             if (xp >= 100) {
-                System.out.println("[Observer] 🎉 New Achievement: Beginner 100XP!");
+                System.out.println("[Observer] !!! New Achievement: Beginner 100XP!");
             }
         }
     }
@@ -20,11 +20,11 @@ public class Observers {
 
         @Override
         public void update(int xp) {
-            int newLevel = xp / 50 + 1; // каждый 50 XP — новый уровень
+            int newLevel = xp / 50 + 1;
 
             if (newLevel > level) {
                 level = newLevel;
-                System.out.println("[Observer] 🔼 Level Up! New level: " + level);
+                System.out.println("[Observer] [!] Level Up! New level: " + level);
             }
         }
     }
@@ -35,7 +35,7 @@ public class Observers {
         @Override
         public void update(int xp) {
             if (xp >= 20) {
-                System.out.println("[Observer] ⭐ Daily goal completed!");
+                System.out.println("[Observer] ! Daily goal completed!");
             }
         }
     }
