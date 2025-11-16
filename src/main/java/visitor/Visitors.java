@@ -21,7 +21,7 @@ public class Visitors {
     public static    class ReportGenerator implements StatisticsVisitor{
         @Override
         public void visit(User user) {
-            System.out.println("User " + user.getName() + "learned " + user.getLearnedWords());
+            System.out.println(" User " + user.getName() + " learned " + user.getLearnedWords());
 
         }
 

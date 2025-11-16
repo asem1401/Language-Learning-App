@@ -9,10 +9,10 @@ public class Observers {
         @Override
         public void onProgressChanged(User user) {
             System.out.println(
-                    "[Observer] User " + user.getName()
+                    "User " + user.getName()
                             + " progress: " + user.getCorrectAnswers()
-                            + "/" + user.getTotalAnswers()
-                            + " (" + user.getAccuracy() + "%)"
+                            + " / " + user.getTotalAnswers()
+                            + " ( " + user.getAccuracy() + "%)"
             );
         }
     }

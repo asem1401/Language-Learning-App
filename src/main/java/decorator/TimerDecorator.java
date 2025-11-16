@@ -5,26 +5,29 @@ import strategy.LearningStrategy;
 
 public class TimerDecorator implements LearningStrategy {
 
-    private LearningStrategy strategy;
-    public TimerDecorator(LearningStrategy strategy){
-    this.strategy = strategy;
+    private final LearningStrategy base;
+
+    public TimerDecorator(LearningStrategy base) {
+        this.base = base;
     }
 
     @Override
     public void teach(Word word) {
-        strategy.teach(word);
+
+        base.teach(word);
     }
 
     @Override
     public boolean test(Word word) {
         long start = System.currentTimeMillis();
 
-        boolean result = strategy.test(word);
+        boolean result = base.test(word);
 
         long end = System.currentTimeMillis();
         long timeMs = end - start;
 
         System.out.println("[Info] You spent " + timeMs + " ms on this answer.");
+
         return result;
     }
 }

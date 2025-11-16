@@ -25,4 +25,10 @@ public class Word {
     public int getDifficulty()  {
         return difficulty;
     }
+
+    @Override
+    public String toString() {
+        return nativeWord + " - " + translation + " (cat: " + category + ", diff: " + difficulty + ")";
+    }
 }
+
