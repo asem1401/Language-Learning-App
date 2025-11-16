@@ -10,12 +10,12 @@ import visitor.*;
 public class LanguageLearningApp {
     public static void main(String[] args){
         List<Word> allWords = new ArrayList<>();
-        allWords.add(new Word("Lebron", "Леброн", "Basketball", 1));
-        allWords.add(new Word("Snickers", "Кроссовки", "shoes", 2));
-        allWords.add(new Word("iPhone", "Айфон", "electronics", 1));
-        allWords.add(new Word("Sofa", "Диван", "furniture", 3));
-        allWords.add(new Word("Rim", "Кольцо", "Basketball", 2));
-        User user = new User("Anna");
+        allWords.add(new Word("Леброн", "Lebron", "Basketball", 1));
+        allWords.add(new Word("Кроссовки", "Snickers", "shoes", 2));
+        allWords.add(new Word("Айфон", "iphone", "electronics", 1));
+        allWords.add(new Word("Диван", "Sofa", "furniture", 3));
+        allWords.add(new Word("Кольцо", "Rim1", "Basketball", 2));
+        User user = new User("Asem");
         Vocabulary vocab = new Vocabulary("English");
         for (Word w : allWords) vocab.addWord(w);
 
