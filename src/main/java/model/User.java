@@ -1,5 +1,6 @@
 package model;
 
+import observer.ProgressObserver;
 import java.util.ArrayList;
 import java.util.List;
 
