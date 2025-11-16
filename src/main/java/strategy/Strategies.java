@@ -1,5 +1,6 @@
 package strategy;
 
+import facade.LearningFacade;
 import model.Word;
 import java.util.List;
 import java.util.Scanner;
@@ -7,16 +8,15 @@ import java.util.Scanner;
 public class Strategies {
 
     public static class FlashCardStrategy implements LearningStrategy {
-        private Scanner scanner = new Scanner(System.in);
         public void teach(Word word) {
             System.out.println("Flash card: " + word.getNative());
             System.out.println("Press Enter for translation...");
-            scanner.nextLine();
+            LearningFacade.getScanner().nextLine();
             System.out.println("Translation: " + word.getTranslation());
         }
         public boolean test(Word word) {
             System.out.print("Translate: " + word.getNative() + ": ");
-            String answer = scanner.nextLine().trim().toLowerCase();
+            String answer = LearningFacade.getScanner().nextLine().trim().toLowerCase();
             return answer.equals(word.getTranslation().toLowerCase());
         }
     }
@@ -43,19 +43,25 @@ public class Strategies {
                 }
             }
             for (int i = 0; i < 4; i++) System.out.println((i+1) + ") " + options[i]);
-            int answer = scanner.nextInt(); scanner.nextLine();
-            return answer-1 == rightIndex;
+            try {
+                Scanner scanner = LearningFacade.getScanner();
+                int answer = scanner.nextInt();
+                scanner.nextLine();
+                return answer-1 == rightIndex;
+            }catch (Exception e) {
+                LearningFacade.getScanner().nextLine();
+                return false;
+            }
         }
     }
 
     public static class TranslationStrategy implements LearningStrategy {
-        private Scanner scanner = new Scanner(System.in);
         public void teach(Word word) {
             System.out.println("Translation: " + word.getNative() + " - " + word.getTranslation());
         }
         public boolean test(Word word) {
             System.out.print("Translate: " + word.getNative() + ": ");
-            String answer = scanner.nextLine().trim().toLowerCase();
+            String answer = LearningFacade.getScanner().nextLine().trim().toLowerCase();
             return answer.equals(word.getTranslation().toLowerCase());
         }
     }

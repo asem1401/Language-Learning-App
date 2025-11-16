@@ -22,7 +22,7 @@ public class Word {
     public String getCategory(){
         return category;
     }
-    public int getDifficulty(){
+    public int getDifficulty()  {
         return difficulty;
     }
 }
