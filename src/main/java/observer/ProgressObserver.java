@@ -1,5 +1,7 @@
 package observer;
 
+import model.User;
+
 public interface ProgressObserver {
-    void update(int xp);
+    void onProgressChanged(User user);
 }
